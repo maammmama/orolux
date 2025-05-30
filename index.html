@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OROLUX | Swiss Luxury Watches</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/my-watch-colne/frontend/src/styles/main.css" />
+  <link rel="stylesheet" href="/my-watch-colne/frontend/src/styles/shared/header.css">
+    <link rel="icon" type="image/x-icon" href="/my-watch-colne/frontend/src/images/logos/logo.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <meta http-equiv="Content-Security-Policy" content="img-src * 'self' data: https:;">
+</head>
+<body class=" text-white" style="background-color:#0a0a0a;">
+  
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50   backdrop-filter " style="border-radius: 5px;" >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center" id="logo_name" >
+          <a href="#" class="text-2xl font-bold " > OROLUX</a>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="/my-watch-colne/frontend/src/views/store/product.html" class="text-gray-300 hover:text-white transition duration-300" style="color: rgb(255, 249, 249);">WATCHES</a>
+          <a href="/my-watch-colne/frontend/src/views/store/product.html" class="text-gray-300 hover:text-white transition duration-300" style="color: rgb(255, 255, 255);">COLLECTIONS</a>
+          <a href="/my-watch-colne/frontend/src/views/store/location.html" class="text-gray-300 hover:text-white transition duration-300"  style="color: rgb(255, 255, 255);">STORE LOCATOR</a>
+          <a href="/my-watch-colne/frontend/src/views/store/cart.html" class="text-gray-300 hover:text-white transition duration-300" style="color: rgb(255, 255, 255);">BAG</a>
+        </div>
+        <div class="md:hidden">
+          <button id="menu-btn" class="text-white focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden  bg-opacity-90 px-4 py-2">
+      <a href="/my-watch-colne/frontend/src/views/store/product.html" class="block py-2 text-gray-300 hover:text-white">WATCHES</a>
+      <a href="/my-watch-colne/frontend/src/views/store/product.html" class="block py-2 text-gray-300 hover:text-white">COLLECTIONS</a>
+      <a href="/my-watch-colne/frontend/src/views/store/location.html" class="block py-2 text-gray-300 hover:text-white">STORE LOCATOR</a>
+      <a href="/my-watch-colne/frontend/src/views/store/cart.html" class="block py-2 text-gray-300 hover:text-white">BAG</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center text-white">
+  <!-- Background Video -->
+  <video id="heroVideo" class="hero-video" autoplay muted loop playsinline>
+    <!-- Source will be set by JS -->
+    Your browser does not support the video tag.
+  </video>
+  <!-- Foreground Content -->
+  <div class="z-10 text-center">
+    <h1 class="big_titel leFadeIn" style="color: #2966f5; font-size: 5.0rem; font-family: Lucida Bright;">
+        <span>T</span><span>imeless</span> <span>E</span><span>legance</span>
+    </h1>
+    <p class="text-xl leFadeIn" id="des">
+        <span>D</span><span>iscover</span> <span>the</span> <span>legacy</span> <span>of</span> <span>OROLUX</span> <span>craftsmanship.</span>
+    </p>
+    <div class="scroll-down">
+      <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ICONIC COLLECTIONS -->
+  <section class="py-20 px-4">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" style="color: #5585f7;">ICONIC COLLECTIONS</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Submariner -->
+        <div class="watch-card  rounded-lg overflow-hidden" style="background-color: #5585f7;">
+          <div class="h-80 bg-cover bg-center" style="background-image: url('https://content.rolex.com/dam/2022/upright-bba/m126610ln-0001.png?impolicy=main-configurator&imwidth=800');"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">SUBMARINER</h3>
+            <p class=" mb-4" style="color:#d9e4fd ;">The reference among diver's watches. Waterproof to a depth of 300 meters.</p>
+            <a href="/my-watch-colne/frontend/src/views/store/product.html" class="text-black hover:text-yellow-400 flex items-center">Explore <i class="fas fa-arrow-right ml-2"></i></a>
+          </div>
+        </div>
+        <!-- Daytona -->
+        <div class="watch-card  rounded-lg overflow-hidden" style="background-color: #5585f7;">
+          <div class="h-80 bg-cover bg-center" style="background-image: url('https://content.rolex.com/dam/2022/upright-bba/m116500ln-0001.png?impolicy=main-configurator&imwidth=800');"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">DAYTONA</h3>
+            <p class=" mb-4" style="color: #d9e4fd;">Born to measure speed and performance. The ultimate racing chronograph.</p>
+            <a href="/my-watch-colne/frontend/src/views/store/product.html" class="text-black hover:text-yellow-400 flex items-center">Explore <i class="fas fa-arrow-right ml-2"></i></a>
+          </div>
+        </div>
+        <!-- Datejust -->
+        <div class="watch-card  rounded-lg overflow-hidden" style="background-color: #5585f7;">
+          <div class="h-80 bg-cover bg-center" style="background-image: url('https://content.rolex.com/dam/2022/upright-bba/m126334-0002.png?impolicy=main-configurator&imwidth=800');"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">DATEJUST</h3>
+            <p class=" mb-4" style="color:#d9e4fd ;">The classic watch of reference, with its timeless aesthetics and functions.</p>
+            <a href="/my-watch-colne/frontend/src/views/store/product.html" class="text-black hover:text-yellow-400 flex items-center">Explore <i class="fas fa-arrow-right ml-2"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Craftsmanship Section -->
+  <section class="collection-bg py-32 relative">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <div class="md:w-1/2">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6" style="color: #2966f5;">SWISS CRAFTSMANSHIP</h2>
+        <p class="text-lg md:text-xl mb-8">Every OROLUX watch is crafted with meticulous attention to detail and an uncompromising quest for excellence.</p>
+        <div class="grid grid-cols-2 gap-6">
+          <div>
+            <h3 class="text-xl font-bold mb-2 gold-text">PRECISION</h3>
+            <p class="text-gray-300">Each movement is a certified Swiss chronometer, a designation reserved for high-precision watches.</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-2 gold-text">DURABILITY</h3>
+            <p class="text-gray-300">Made from the finest materials to withstand the extremes of any environment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Limited Edition -->
+  <section class="py-20 px-4 bg-black">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 "  style="color: #2966f5;">COSMOGRAPH DAYTONA</h2>
+          <p class="text-gray-400 mb-6">The Cosmograph Daytona is inextricably linked to the world of motor racing...</p>
+          <div class="flex space-x-4 mb-8">
+            <div class="border-r border-gray-700 pr-4">
+              <p class="text-gray-400">Material</p>
+              <p class="text-lg">Oystersteel</p>
+            </div>
+            <div class="border-r border-gray-700 pr-4">
+              <p class="text-gray-400">Bezel</p>
+              <p class="text-lg">Cerachrom</p>
+            </div>
+            <div>
+              <p class="text-gray-400">Waterproof</p>
+              <p class="text-lg">100 meters</p>
+            </div>
+          </div>
+          <a href="/my-watch-colne/frontend/src/views/store/product.html" class="bg-transparent border border-white text-white px-8 py-3 hover:bg-white hover:text-black transition duration-300 inline-block">LEARN MORE</a>
+        </div>
+        <div class="md:w-1/2">
+          <img src="https://content.rolex.com/dam/2022/upright-bba/m116500ln-0001.png?impolicy=main-configurator&imwidth=800" alt="Rolex Daytona" class="w-full max-w-md mx-auto">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trending Now Section -->
+<section class="py-16 px-4 bg-black">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8" style="color: #5585f7;">Trending Now</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Blue Dial -->
+      <div class="rounded-lg overflow-hidden bg-gray-900">
+        <img src="https://content.rolex.com/dam/2022/upright-bba/m126613lb-0002.png?impolicy=main-configurator&imwidth=800" 
+             alt="Blue Dial Watch" 
+             class="w-full h-56 object-cover trending-now"
+             onerror="this.src='https://via.placeholder.com/400x300?text=Blue+Dial'">
+        <div class="p-4">
+          <span class="inline-block bg-blue-600 text-white px-3 py-1 rounded mb-2 text-xs font-semibold">Blue Dial</span>
+          <p class="text-gray-300">Blue Dial</p>
+        </div>
+      </div>
+      <!-- Green Dial -->
+      <div class="rounded-lg overflow-hidden bg-gray-900">
+        <img src="https://content.rolex.com/dam/2022/upright-bba/m126610lv-0002.png?impolicy=main-configurator&imwidth=800" 
+             alt="Green Dial Watch" 
+             class="w-full h-56 object-cover trending-now"
+             onerror="this.src='https://via.placeholder.com/400x300?text=Green+Dial'">
+        <div class="p-4">
+          <span class="inline-block bg-green-600 text-white px-3 py-1 rounded mb-2 text-xs font-semibold">Green Dial</span>
+          <p class="text-gray-300">Green/Emerald Dial</p>
+        </div>
+      </div>
+      <!-- Special Offer -->
+      <div class="rounded-lg overflow-hidden bg-gray-900">
+        <img src="https://content.rolex.com/dam/2022/upright-bba/m126711chnr-0002.png?impolicy=main-configurator&imwidth=800" 
+             alt="Special Offer" 
+             class="w-full h-56 object-cover trending-now"
+             onerror="this.src='https://via.placeholder.com/400x300?text=Special+Offer'">
+        <div class="p-4">
+          <span class="inline-block bg-yellow-600 text-white px-3 py-1 rounded mb-2 text-xs font-semibold">Special Offer</span>
+          <p class="text-gray-300">Limited Time Deal</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Collections Section -->
+
+
+<!-- Our Brands Section -->
+
+
+<!-- Popular Category Section -->
+<section class="py-16 px-4 bg-black">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+    <div class="flex-1">
+      <h3 class="text-lg mb-2" style="color: #388eff;">Popular Category</h3>
+      <ul class="text-3xl md:text-4xl font-bold space-y-2" style="color: #d4d4d4;">
+        <li>Leather Strap</li>
+        <li>Automatic Watches</li>
+        <li>Chronograph Watches</li>
+        <li>Round Dial Watches</li>
+        <li>Gold Dial</li>
+      </ul>
+    </div>
+    <div class="flex-1 flex justify-center">
+      <div class="rounded-lg p-6" style="background-color: #58a0ff;">
+        <img src="https://content.rolex.com/dam/2022/upright-bba/m126283rbr-0031.png?impolicy=main-configurator&imwidth=800" 
+             alt="Popular Category Watch" 
+             class="w-64 h-64 object-contain mx-auto mb-4"
+             onerror="this.src='https://via.placeholder.com/400x400?text=Popular+Watch'">
+        <a href="/my-watch-colne/frontend/src/views/store/product.html"
+           class="block text-center font-semibold py-2 rounded transition"
+           style="background-color: #f3f3f3; color: #3a2c13;">
+          SHOP NOW
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Newsletter -->
+  <section class="py-16 px-4 bg-gray-900">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6" style="color:#2966f5 ;">STAY CONNECTED</h2>
+      <p class="text-gray-400 mb-8">Subscribe to receive the latest OROLUX news, product releases and exclusive events.</p>
+      <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
+        <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 bg-gray-800 border border-gray-700 focus:outline-none focus:border-yellow-500">
+        <button type="submit" class=" hover:bg-yellow-700 text-white px-6 py-3 font-medium" style="background-color: #0b4eec;" >SUBSCRIBE</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-lg font-bold mb-4">OROLUX</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white">About OROLUX</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Corporate</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">CUSTOMER SERVICE</h3>
+          <ul class="space-y-2">
+            <li><a href="/my-watch-colne/frontend/src/views/store/contact.html" class="text-gray-400 hover:text-white">Contact Us</a></li>
+            <li><a href="/my-watch-colne/frontend/src/views/store/FQL.html" class="text-gray-400 hover:text-white">FAQ</a></li>
+            <li><a href="/my-watch-colne/frontend/src/views/store/" class="text-gray-400 hover:text-white">Warranty</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">LEGAL</h3>
+          <ul class="space-y-2">
+            <li><a href="/my-watch-colne/frontend/src/views/store/terms-conditions.html" class="text-gray-400 hover:text-white">Terms & Conditions</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+            <li><a href="/my-watch-colne/frontend/src/views/store/cookie-policy.html" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">FOLLOW US</h3>
+          <div class="flex space-x-4 footer-social-links">
+            <a id="footer-facebook" href="#" target="_blank" class="text-gray-400 hover:text-white">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a id="footer-twitter" href="#" target="_blank" class="text-gray-400 hover:text-white">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a id="footer-instagram" href="#" target="_blank" class="text-gray-400 hover:text-white">
+                <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+        <p>© 2025 OROLUX SA. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Support Widget -->
+<div class="support-widget">
+  <div class="support-links">
+    <a href="/my-watch-colne/frontend/src/views/store/FQL.html">FAQ on orders</a>
+    <a href="/my-watch-colne/frontend/src/views/store/FQL.html">FAQ on shipment</a>
+    <a href="/my-watch-colne/frontend/src/views/store/terms-conditions.html">Warranty</a>
+  </div>
+
+  <div class="contact-options">
+
+    
+    <a href="mailto:orolux.stor1@gmail.com" class="contact-option">
+      <span class="icon">✉️</span>
+      Connect via email
+    </a>
+    
+    <div class="phone-support">
+      <a href="tel:+212 74889226" class="contact-option">
+        <span class="icon">📞</span>
+        +212 74889226
+      </a>
+      <p class="support-hours">Monday to Friday, 9 am – 5 pm (Central European Time)</p>
+    </div>
+  </div>
+</div>
+
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">
+    <span>Chat with us</span>
+    <span class="chat-close" id="chatClose">&times;</span>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <!-- Messages will be inserted here -->
+  </div>
+  <div class="chat-input">
+    <input type="text" placeholder="Type your message..." id="chatInput">
+    <button id="chatSend">Send</button>
+  </div>
+</div>
+
+<div class="support-question" id="supportToggle">
+  <span class="icon"></span>
+  Do you have any questions?
+</div>
+
+  <!-- Firebase Modular SDKs -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAp9UJYdU7-Dxo-4_emNIMiIaiz42XF3EM",
+      authDomain: "oroluxstor-b2b15.firebaseapp.com",
+      databaseURL: "https://oroluxstor-b2b15-default-rtdb.firebaseio.com",
+      projectId: "oroluxstor-b2b15",
+      storageBucket: "oroluxstor-b2b15.firebasestorage.app",
+      messagingSenderId: "978253542057",
+      appId: "1:978253542057:web:9546e01981f07c8c73afb8",
+      measurementId: "G-5FQT34W88Y"
+    };
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
+    window.firebaseApp = app;
+    window.firebaseDB = db;
+  </script>
+  <script src="/my-watch-colne/frontend/src/js/main.js"></script>
+  <script src="/my-watch-colne/frontend/src/js/modules/admin/"></script>
+  <script src="/my-watch-colne/frontend/src/js/modules/shared/footer.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const videos = [
+      '/my-watch-colne/frontend/src/images/logos/first-animation.mp4',
+      '/my-watch-colne/frontend/src/images/logos/secound-anmation.mp4',
+      '/my-watch-colne/frontend/src/images/logos/therdvideo-anmation.mp4'
+    ];
+    const randomVideo = videos[Math.floor(Math.random() * videos.length)];
+    const heroVideo = document.getElementById('heroVideo');
+    const source = document.createElement('source');
+    source.src = randomVideo;
+    source.type = 'video/mp4';
+    heroVideo.appendChild(source);
+    heroVideo.load();
+  });
+</script>
+</body>
+</html>
