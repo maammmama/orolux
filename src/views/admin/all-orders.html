@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Authentication Check - Must be first script -->
+    <script type="module" src="/my-watch-colne/frontend/src/js/utils/authProtection.js"></script>
+    <link rel="stylesheet" href="/my-watch-colne/frontend/src/styles/admin/all-orders.css">
+    <title>Admin Dashboard - All Orders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen">
+        <!-- Sidebar would be here in a complete dashboard -->
+        
+        <!-- Main Content -->
+        <div class="ml-0 md:ml-64 p-4 md:p-6">
+            <!-- Page Header -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-800">All Orders</h1>
+                    <nav class="flex" aria-label="Breadcrumb">
+                        <ol class="inline-flex items-center space-x-1 md:space-x-3 text-sm">
+                            <li class="inline-flex items-center">
+                                <a href="/my-watch-colne/frontend/src/views/admin/index.html" class="inline-flex items-center text-gray-700 hover:text-blue-600">
+                                    <i class="fas fa-home mr-2"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <div class="flex items-center">
+                                    <i class="fas fa-chevron-right text-gray-400"></i>
+                                    <a href="#" class="ml-1 text-gray-700 hover:text-blue-600 md:ml-2">Orders</a>
+                                </div>
+                            </li>
+                            <li aria-current="page">
+                                <div class="flex items-center">
+                                    <i class="fas fa-chevron-right text-gray-400"></i>
+                                    <span class="ml-1 text-gray-500 md:ml-2 font-medium">All Orders</span>
+                                </div>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md flex items-center">
+                        <i class="fas fa-plus mr-2"></i>
+                        New Order
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search & Filter Panel -->
+            <div class="bg-white rounded-lg shadow p-4 mb-6">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 filter-section">
+                    <!-- Search Bar -->
+                    <div class="relative search-bar">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                        <input type="text" id="search-orders" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5" placeholder="Search by Order ID, Customer, Email...">
+                    </div>
+
+                    <!-- Filters -->
+                    <div class="flex flex-wrap gap-2">
+                        <!-- Order Status Filter -->
+                        <div class="dropdown relative">
+                            <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-md inline-flex items-center">
+                                <span>Status</span>
+                                <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                            </button>
+                            <div class="dropdown-content p-2">
+                                <div class="flex items-center mb-2">
+                                    <input id="status-all" type="checkbox" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                    <label for="status-all" class="ml-2 text-sm font-medium text-gray-900">All</label>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <input id="status-pending" type="checkbox" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                    <label for="status-pending" class="ml-2 text-sm font-medium text-gray-900">Pending</label>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <input id="status-processing" type="checkbox" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                    <label for="status-processing" class="ml-2 text-sm font-medium text-gray-900">Processing</label>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <input id="status-shipped" type="checkbox" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                    <label for="status-shipped" class="ml-2 text-sm font-medium text-gray-900">Shipped</label>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <input id="status-delivered" type="checkbox" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                    <label for="status-delivered" class="ml-2 text-sm font-medium text-gray-900">Delivered</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="status-cancelled" type="checkbox" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                    <label for="status-cancelled" class="ml-2 text-sm font-medium text-gray-900">Cancelled</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Status Filter -->
+                        <div class="dropdown relative">
+                            <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-md inline-flex items-center">
+                                <span>Payment</span>
+                                <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                            </button>
+                            <div class="dropdown-content p-2">
+                                <div class="flex items-center mb-2">
+                                    <input id="payment-all" type="checkbox" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                    <label for="payment-all" class="ml-2 text-sm font-medium text-gray-900">All</label>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <input id="payment-paid" type="checkbox" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                    <label for="payment-paid" class="ml-2 text-sm font-medium text-gray-900">Paid</label>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <input id="payment-unpaid" type="checkbox" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                    <label for="payment-unpaid" class="ml-2 text-sm font-medium text-gray-900">Unpaid</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input id="payment-refunded" type="checkbox" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                    <label for="payment-refunded" class="ml-2 text-sm font-medium text-gray-900">Refunded</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Date Range Filter -->
+                        <div class="flex items-center gap-2 bg-gray-100 rounded-md px-3">
+                            <i class="fas fa-calendar text-gray-500"></i>
+                            <input type="date" class="date-picker" placeholder="From">
+                            <span>to</span>
+                            <input type="date" class="date-picker" placeholder="To">
+                        </div>
+
+                        <!-- Sort By -->
+                        <div class="dropdown relative">
+                            <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-md inline-flex items-center">
+                                <span>Sort By</span>
+                                <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                            </button>
+                            <div class="dropdown-content p-2">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Date (Newest)</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Date (Oldest)</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Amount (High to Low)</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Amount (Low to High)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bulk Actions -->
+            <div class="bg-white rounded-lg shadow p-4 mb-4 flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center">
+                    <input id="select-all-orders" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                    <label for="select-all-orders" class="ml-2 text-sm font-medium text-gray-900">Select All</label>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <div class="dropdown relative">
+                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-md inline-flex items-center">
+                            <span>Bulk Actions</span>
+                            <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </button>
+                        <div class="dropdown-content p-2">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mark as Shipped</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mark as Delivered</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cancel Orders</a>
+                            <div class="border-t my-1"></div>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Export to CSV</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Export to Excel</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Print Selected</a>
+                        </div>
+                    </div>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md flex items-center">
+                        <i class="fas fa-sync-alt mr-2"></i>
+                        Refresh
+                    </button>
+                </div>
+            </div>
+
+            <!-- Orders Table -->
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <div class="table-responsive">
+                    <table id="ordersTable" class="min-w-full divide-y divide-gray-200">
+                        <thead>
+                            <tr>
+                                <th class="px-6 py-3 bg-gray-50 text-left">
+                                    <input type="checkbox" id="select-all">
+                                </th>
+                                <th class="px-6 py-3 bg-gray-50 text-left">Product Name</th>
+                                <th class="px-6 py-3 bg-gray-50 text-left">Order Date</th>
+                                <th class="px-6 py-3 bg-gray-50 text-left">First Name</th>
+                                <th class="px-6 py-3 bg-gray-50 text-left">Last Name</th>
+                                <th class="px-6 py-3 bg-gray-50 text-left">Address</th>
+                                <th class="px-6 py-3 bg-gray-50 text-left">City</th>
+                                <th class="px-6 py-3 bg-gray-50 text-left">Phone</th>
+                                <th class="px-6 py-3 bg-gray-50 text-left">Email</th>
+                                <th class="px-6 py-3 bg-gray-50 text-left">Quantity</th>
+                                <th class="px-6 py-3 bg-gray-50 text-left">Total Price</th> <!-- Changed from Size to Total Price -->
+                                <th class="px-6 py-3 bg-gray-50 text-left">Message</th>
+                                <th class="px-6 py-3 bg-gray-50 text-left">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Orders will be inserted here -->
+                        </tbody>
+                    </table>
+
+                    <div id="empty-state" class="hidden text-center py-8">
+                        <p>No orders found</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty State (Hidden by default) -->
+            <div id="empty-state" class="hidden bg-white rounded-lg shadow p-12 text-center">
+                <i class="fas fa-shopping-cart text-4xl text-gray-400 mb-4"></i>
+                <h3 class="text-lg font-medium text-gray-900">No orders found</h3>
+                <p class="mt-1 text-sm text-gray-500">Try adjusting your search or filter to find what you're looking for.</p>
+                <div class="mt-6">
+                    <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        <i class="fas fa-plus -ml-1 mr-2"></i>
+                        New Order
+                    </button>
+                </div>
+            </div>
+
+            <!-- Order Details Drawer -->
+            <div id="order-details-drawer" class="drawer">
+                <div class="drawer-content">
+                    <!-- Header -->
+                    <div class="drawer-header">
+                        <h2 class="text-xl font-semibold text-gray-900">Order Details</h2>
+                        <button class="close-drawer text-gray-500 hover:text-gray-700">&times;</button>
+                    </div>
+
+                    <!-- Drawer Body -->
+                    <div class="drawer-body">
+                        <!-- Customer Information -->
+                        <div class="drawer-section">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Customer Information</h3>
+                            <div class="grid grid-cols-1 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-500">Name</label>
+                                    <p id="customer-name" class="mt-1 text-sm text-gray-900"></p>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-500">Email</label>
+                                    <p id="customer-email" class="mt-1 text-sm text-gray-900"></p>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-500">Phone</label>
+                                    <p id="customer-phone" class="mt-1 text-sm text-gray-900"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Status -->
+                        <div class="drawer-section">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-lg font-medium text-gray-900">Order Status</h3>
+                                <span id="order-status" class="badge badge-processing">Processing</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <select class="rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                                    <option value="pending">Pending</option>
+                                    <option value="processing">Processing</option>
+                                    <option value="shipped">Shipped</option>
+                                    <option value="delivered">Delivered</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                                <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                                    Update Status
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Order Items -->
+                        <div class="drawer-section">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Order Items</h3>
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full">
+                                    <thead>
+                                        <tr class="border-b">
+                                            <th class="px-4 py-2 text-left text-sm font-medium text-gray-500">Item</th>
+                                            <th class="px-4 py-2 text-left text-sm font-medium text-gray-500">Qty</th>
+                                            <th class="px-4 py-2 text-left text-sm font-medium text-gray-500">Price</th>
+                                            <th class="px-4 py-2 text-left text-sm font-medium text-gray-500">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="order-items">
+                                        <!-- Items will be inserted here -->
+                                    </tbody>
+                                    <tfoot>
+                                        <tr class="border-t">
+                                            <td colspan="3" class="px-4 py-2 text-right font-medium">Total:</td>
+                                            <td id="order-total" class="px-4 py-2 font-medium"></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Shipping Information -->
+                        <div class="drawer-section">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Shipping Information</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-500">Shipping Address</label>
+                                    <p id="shipping-address" class="mt-1 text-sm text-gray-900"></p>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-500">Tracking Number</label>
+                                    <input type="text" id="tracking-number" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Enter tracking number">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-500">Shipping Method</label>
+                                    <p id="shipping-method" class="mt-1 text-sm text-gray-900"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Message Section -->
+                        <div class="drawer-section">
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Messages</h3>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div id="messages-container" class="space-y-4 mb-4 max-h-60 overflow-y-auto">
+                                    <!-- Messages will be displayed here -->
+                                </div>
+                                <div class="flex gap-2">
+                                    <input type="text" id="message-input" class="flex-1 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Type a message...">
+                                    <button id="send-message" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                                        Send
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex justify-end gap-4">
+                            <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+                                Print Order
+                            </button>
+                            <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                                Save Changes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/my-watch-colne/frontend/src/js/modules/admin/all-orders.js">
+      
+    </script>
+    <script src="/my-watch-colne/frontend/src/js/modules/admin/orders.js"></script>
+    <script>
+        // Function to count orders and update the dashboard
+        function updateOrderCount() {
+            const orderTableBody = document.querySelector('#ordersTable tbody');
+            const totalOrders = orderTableBody ? orderTableBody.children.length : 0;
+            
+            // Store the count in localStorage to use it in the dashboard
+            localStorage.setItem('totalOrders', totalOrders);
+            
+            // If we're on the dashboard page, update the count display
+            const orderCountElement = document.querySelector('[data-order-count]');
+            if (orderCountElement) {
+                orderCountElement.textContent = totalOrders.toLocaleString();
+            }
+        }
+
+        // Function to initialize order tracking
+        function initOrderTracking() {
+            // Listen for changes in the orders table
+            const orderTableBody = document.querySelector('#ordersTable tbody');
+            if (orderTableBody) {
+                // Create a MutationObserver to watch for changes in the table
+                const observer = new MutationObserver(updateOrderCount);
+                observer.observe(orderTableBody, { childList: true, subtree: true });
+                
+                // Initial count
+                updateOrderCount();
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initOrderTracking);
+    </script>
+</body>
+</html>

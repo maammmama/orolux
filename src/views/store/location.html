@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/my-watch-colne/frontend/src/styles/location/location.css">
+  <link rel="stylesheet" href="/my-watch-colne/frontend/src/styles/shared/header.css">
+    <link rel="icon" type="image/x-icon" href="/my-watch-colne/frontend/src/images/logos/logo.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Find a Retailer - NOMOS Glashütte</title>
+</head>
+<body class="text-black bg-white">
+
+
+<!-- Navigation -->
+<header class="main-header">
+    <div class="header-container">
+        <!-- Primary Navigation -->
+        <nav class="primary-nav">
+            <ul>
+                <li><a href="/my-watch-colne/frontend/src/views/store/product.html">Watches</a></li>
+                <li><a href="/watchmaking">Watchmaking</a></li>
+                <li><a href="/topics">Topics</a></li>
+            </ul>
+        </nav>
+
+        <!-- Logo -->
+        <div class="logo">
+            <a href="/my-watch-colne/frontend/src/views/store/index.html">OROLUX STORE</a>
+        </div>
+
+        <!-- Secondary Navigation -->
+        <nav class="secondary-nav">
+            <ul>
+                <li><a href="/my-watch-colne/frontend/src/views/store/product.html">Shop</a></li>
+                <li><a href="/my-watch-colne/frontend/src/views/store/location.html">Find Retailer</a></li>
+                <li>
+ 
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu">
+        <ul>
+            <li><a href="/my-watch-colne/frontend/src/views/store/product.html">Watches</a></li>
+            <li><a href="/watchmaking">Watchmaking</a></li>
+            <li><a href="/topics">Topics</a></li>
+            <li><a href="/my-watch-colne/frontend/src/views/store/product.html">Shop</a></li>
+            <li><a href="/my-watch-colne/frontend/src/views/store/location.html">Find Retailer</a></li>
+        </ul>
+    </nav>
+</header>
+
+  <!-- Main Content -->
+  <div class="retailer-locator mt-24">
+    <h2 class="retailer-title">Find retailer</h2>
+    <p class="retailer-description">
+      Where in the world are our beautiful watches? The retailer locator will tell you.
+    </p>
+
+    <p class="privacy-notice">
+      By loading the map, you accept Google's privacy policy.
+    </p>
+
+    <div class="map-actions">
+      <button class="map-button">Load map</button>
+    </div>
+
+    <!-- Map container -->
+    <div id="map" style="height: 400px; background: #f5f5f5; margin-top: 30px; display: flex; align-items: center; justify-content: center;">
+      <p>Map would be displayed here</p>
+    </div>
+  </div>
+    <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="max-w-4xl">
+        <h2>STAY CONNECTED</h2>
+        <p>Subscribe to receive updates, access to exclusive deals, and more.</p>
+        <form action="#" method="POST" class="newsletter-form">
+            <input 
+                type="email" 
+                placeholder="Enter your email address" 
+                required 
+                class="newsletter-input"
+            >
+            <button type="submit">
+                Subscribe
+            </button>
+        </form>
+    </div>
+</section>
+  <!-- Footer -->
+  <footer class="bg-black py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-lg font-bold mb-4">OROLUX</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white">About OROLUX</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Corporate</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">CUSTOMER SERVICE</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Warranty</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">LEGAL</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white">Terms & Conditions</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">FOLLOW US</h3>
+          <div class="flex space-x-4 footer-social-links">
+            <a id="footer-facebook" href="#" target="_blank" class="text-gray-400 hover:text-white">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a id="footer-twitter" href="#" target="_blank" class="text-gray-400 hover:text-white">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a id="footer-instagram" href="#" target="_blank" class="text-gray-400 hover:text-white">
+                <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+        <p>© 2025 OROLUX SA. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/my-watch-colne/frontend/src/js/modules/state/location.js"></script>
+  <script src="/my-watch-colne/frontend/src/js/modules/shared/footer.js"></script>
+
+  <!-- Support Widget -->
+<div class="support-widget">
+  <div class="support-links">
+    <a href="/my-watch-colne/frontend/src/views/store/FQL.html">FAQ on orders</a>
+    <a href="/my-watch-colne/frontend/src/views/store/FQL.html">FAQ on shipment</a>
+    <a href="/my-watch-colne/frontend/src/views/store/terms-conditions.html">Warranty</a>
+  </div>
+
+  <div class="contact-options">
+
+    
+    <a href="mailto:orolux.stor1@gmail.com" class="contact-option">
+      <span class="icon">✉️</span>
+      Connect via email
+    </a>
+    
+    <div class="phone-support">
+      <a href="tel:+212 74889226" class="contact-option">
+        <span class="icon">📞</span>
+        +212 74889226
+      </a>
+      <p class="support-hours">Monday to Friday, 9 am – 5 pm (Central European Time)</p>
+    </div>
+  </div>
+</div>
+
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">
+    <span>Chat with us</span>
+    <span class="chat-close" id="chatClose">&times;</span>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <!-- Messages will be inserted here -->
+  </div>
+  <div class="chat-input">
+    <input type="text" placeholder="Type your message..." id="chatInput">
+    <button id="chatSend">Send</button>
+  </div>
+</div>
+
+
+</html>  <span class="icon"></span>
+
+</div>
+</body>
+</html>

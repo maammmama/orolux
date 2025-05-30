@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Authentication Check - Must be first script -->
+    <script type="module" src="/my-watch-colne/frontend/src/js/utils/authProtection.js"></script>
+    <link rel="stylesheet" href="/my-watch-colne/frontend/src/styles/admin/live-chat.css">
+    <link rel="stylesheet" href="/my-watch-colne/frontend/src/styles/shared/live-chat.css">
+    <title>Luxury Sporty - Admin Chat</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Live Chat Dashboard</h2>
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>Online</span>
+            </div>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search users..." id="userSearch">
+        </div>
+        <div class="user-list" id="userList">
+            <!-- User items will be inserted here -->
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div id="chatContent">
+            <div class="empty-state">
+                <div class="empty-state-icon">💬</div>
+                <h3>No chat selected</h3>
+                <p>Select a user from the sidebar to start chatting</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/my-watch-colne/frontend/src/js/modules/admin/live-chat.js">
+
+    </script>
+      <script src="/my-watch-colne/backend/server.js"></script>
+
+</body>
+</html>

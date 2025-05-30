@@ -1,0 +1,14 @@
+<!-- Admin Page Security -->
+<script type="module">
+    import { protectPage } from '/my-watch-colne/frontend/src/js/utils/authUtils.js';
+    
+    // Check authentication on page load
+    document.addEventListener('DOMContentLoaded', async () => {
+        try {
+            await protectPage();
+        } catch (error) {
+            console.error('Authentication error:', error);
+            window.location.href = '/my-watch-colne/frontend/src/views/admin/login.html';
+        }
+    });
+</script>

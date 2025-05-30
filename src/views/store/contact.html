@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/my-watch-colne/frontend/src/styles/contact/contact.css">
+  <link rel="stylesheet" href="/my-watch-colne/frontend/src/styles/shared/header.css">
+    <link rel="icon" type="image/x-icon" href="/my-watch-colne/frontend/src/images/logos/logo.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Contact - NOMOS Glashütte</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+<header class="main-header">
+    <div class="header-container">
+        <!-- Primary Navigation -->
+        <nav class="primary-nav">
+            <ul>
+                <li><a href="/my-watch-colne/frontend/src/views/store/product.html">Watches</a></li>
+                <li><a href="/watchmaking">Watchmaking</a></li>
+                <li><a href="/topics">Topics</a></li>
+            </ul>
+        </nav>
+
+        <!-- Logo -->
+        <div class="logo">
+            <a href="/my-watch-colne/frontend/src/views/store/index.html">OROLUX STORE</a>
+        </div>
+
+        <!-- Secondary Navigation -->
+        <nav class="secondary-nav">
+            <ul>
+                <li><a href="/my-watch-colne/frontend/src/views/store/product.html">Shop</a></li>
+                <li><a href="/my-watch-colne/frontend/src/views/store/location.html">Find Retailer</a></li>
+                <li>
+                    <button class="search-toggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </li>
+                <li class="mobile-only">
+                    <button class="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu">
+        <ul>
+            <li><a href="/my-watch-colne/frontend/src/views/store/product.html">Watches</a></li>
+            <li><a href="/watchmaking">Watchmaking</a></li>
+            <li><a href="/topics">Topics</a></li>
+            <li><a href="/my-watch-colne/frontend/src/views/store/product.html">Shop</a></li>
+            <li><a href="/my-watch-colne/frontend/src/views/store/location.html">Find Retailer</a></li>
+        </ul>
+    </nav>
+</header>
+
+  <!-- Contact Hero -->
+  <section class="contact-hero">
+    <h1 class="contact-title">Contact</h1>
+    <p class="contact-subtitle">
+      We're here to help. Whether you have questions about our watches, need assistance with an order, 
+      or just want to say hello, please don't hesitate to get in touch.
+    </p>
+  </section>
+
+  <!-- Contact Sections -->
+  <div class="contact-sections">
+    <!-- Contact Information -->
+    <section class="contact-section">
+      <h2 class="section-title">Contact Information</h2>
+      
+      <div class="contact-info" id="storeContactInfo"></div>
+      
+      <h2 class="section-title">Press Inquiries</h2>
+      <div class="contact-method">
+        <div class="contact-label">Press Contact</div>
+        <div class="contact-value">mailto:orolux.stor1@gmail.com</div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-section">
+      <h2 class="section-title">Send Us a Message</h2>
+      
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="name" class="form-label">Name*</label>
+          <input type="text" id="name" class="form-input" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email" class="form-label">Email*</label>
+          <input type="email" id="email" class="form-input" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="subject" class="form-label">Subject</label>
+          <input type="text" id="subject" class="form-input">
+        </div>
+        
+        <div class="form-group">
+          <label for="message" class="form-label">Message*</label>
+          <textarea id="message" class="form-textarea" required></textarea>
+        </div>
+        
+        <button type="submit" class="form-submit">Send Message</button>
+      </form>
+    </section>
+  </div>
+  <!-- Replace the empty Newsletter section with this -->
+<section class="newsletter">
+    <div class="max-w-4xl">
+        <h2>STAY CONNECTED</h2>
+        <p>Subscribe to receive updates, access to exclusive deals, and more.</p>
+        <form action="#" method="POST" class="newsletter-form">
+            <input 
+                type="email" 
+                placeholder="Enter your email address" 
+                required 
+                class="newsletter-input"
+            >
+            <button type="submit">
+                Subscribe
+            </button>
+        </form>
+    </div>
+</section>
+
+    <!-- Footer -->
+  <footer class="bg-black py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-lg font-bold mb-4">OROLUX</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white">About OROLUX</li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Corporate</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">CUSTOMER SERVICE</h3>
+          <ul class="space-y-2">
+            <li><a href="" class="text-gray-400 hover:text-white">Contact Us</a></li>
+            <li><a href="/my-watch-colne/frontend/src/views/store/FQL.html" class="text-gray-400 hover:text-white">FAQ</a></li>
+            <li><a href="" class="text-gray-400 hover:text-white">Warranty</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">LEGAL</h3>
+          <ul class="space-y-2">
+            <li><a href="/my-watch-colne/frontend/src/views/store/terms-conditions.html" class="text-gray-400 hover:text-white">Terms & Conditions</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+            <li><a href="/my-watch-colne/frontend/src/views/store/cookie-policy.html" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">FOLLOW US</h3>
+          <div class="flex space-x-4 footer-social-links">
+            <a id="footer-facebook" href="#" target="_blank" class="text-gray-400 hover:text-white">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a id="footer-twitter" href="#" target="_blank" class="text-gray-400 hover:text-white">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a id="footer-instagram" href="#" target="_blank" class="text-gray-400 hover:text-white">
+                <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+        <p>© 2025 OROLUX SA. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/my-watch-colne/frontend/src/js/modules/state/contact.js">
+
+  </script>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const info = JSON.parse(localStorage.getItem('contactInfo') || '{}');
+  const container = document.getElementById('storeContactInfo');
+  container.innerHTML = `
+    <div class="contact-method">
+      <div class="contact-label">Phone</div>
+      <div class="contact-value">${info.phone || '(+212) 724889226'}</div>
+    </div>
+    <div class="contact-method">
+      <div class="contact-label">Email</div>
+      <div class="contact-value">${info.email || 'mailto:orolux.stor1@gmail.com'}</div>
+    </div>
+    <div class="contact-method">
+      <div class="contact-label">Address</div>
+      <div class="contact-value">${info.address || 'Your address here'}</div>
+    </div>
+    <div class="contact-method">
+      <div class="contact-label">Press Contact</div>
+      <div class="contact-value">${info.press || 'mailto:orolux.stor1@gmail.com'}</div>
+    </div>
+  `;
+});
+</script>
+<script src="/my-watch-colne/frontend/src/js/modules/shared/footer.js"></script>
+</body>
+</html>

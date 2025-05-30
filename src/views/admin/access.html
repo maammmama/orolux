@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/my-watch-colne/frontend/src/styles/admin/access-control.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin - Access Control</title>
+
+  <style>
+    .breadcrumb-nav {
+      margin-bottom: 20px;
+      padding: 10px 0;
+    }
+    
+    .breadcrumb-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    .breadcrumb-item {
+      display: inline-flex;
+      align-items: center;
+    }
+    
+    .breadcrumb-item:not(:last-child)::after {
+      content: ">";
+      margin: 0 8px;
+      color: #666;
+    }
+    
+    .breadcrumb-link {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    
+    .breadcrumb-link:hover {
+      text-decoration: underline;
+    }
+    
+    .breadcrumb-current {
+      color: #666;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <!-- Authentication Check - Must be first script -->
+  <script type="module" src="/my-watch-colne/frontend/src/js/utils/authProtection.js"></script>
+
+  <div class="admin-container">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item">
+          <a href="/admin/dashboard" class="breadcrumb-link">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="/admin" class="breadcrumb-link">Admin</a>
+        </li>
+        <li class="breadcrumb-item">
+          <span class="breadcrumb-current">Access Control</span>
+        </li>
+      </ol>
+    </nav>
+
+    <h2>🔐 Access Control</h2>
+
+    <!-- Users Table -->
+    <div class="section">
+      <h3>👥 Admin Users</h3>
+      <button class="btn" onclick="addUser()">+ Add User</button>
+      <table id="userTable">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Edit Role</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Dynamic rows go here -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Role Permissions Matrix -->
+    <div class="section">
+      <h3>🔒 Role Permissions</h3>
+      <div class="permission-matrix">
+        <table>
+          <thead>
+            <tr>
+              <th>Permission</th>
+              <th>Admin</th>
+              <th>Editor</th>
+              <th>Viewer</th>
+              <th>Support</th>
+            </tr>
+          </thead>
+          <tbody id="permissionTable">
+            <!-- Dynamic permissions go here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Save Button -->
+    <button class="btn" onclick="saveAccessControl()">Save All Changes</button>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+  </div>
+
+  <script src="/my-watch-colne/frontend/src/js/modules/admin/access.js">
+   
+  </script>
+</body>
+</html>
