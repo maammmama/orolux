@@ -1,12 +1,13 @@
 {
-  "name": "orolux-watch-store",
+  "name": "orolux",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "body-parser": "^2.2.0",

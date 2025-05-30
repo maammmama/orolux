@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/orolux/', // Your repository name
+  base: '/orolux/', // Matches repository name
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
